@@ -12,6 +12,7 @@
 @interface RCWMyScene()
 
 @property (nonatomic, weak) UITouch *shipTouch;
+@property (nonatomic, assign) NSTimeInterval lastUpdateTime;
 
 @end
 
@@ -40,13 +41,40 @@
 
 - (void)update:(NSTimeInterval)currentTime
 {
+	if (_lastUpdateTime == 0)
+	{
+		_lastUpdateTime = currentTime;
+	}
+	
 	if (_shipTouch)
 	{
-		SKNode *ship = [self childNodeWithName:@"ship"];
-		//ship.position = [_shipTouch locationInNode:self];
-		
 		CGPoint touchPoint = [_shipTouch locationInNode:self];
-		ship.position = touchPoint;
+		
+		[self moveShipTowardPoint:touchPoint byTimeDelta:currentTime - _lastUpdateTime];
+	}
+	
+	_lastUpdateTime = currentTime;
+}
+
+- (void)moveShipTowardPoint:(CGPoint)point byTimeDelta:(NSTimeInterval)timeDelta
+{
+	CGFloat shipSpeed = 130; ///< points per second
+	SKNode *ship = [self childNodeWithName:@"ship"];
+	
+	CGFloat distanceLeft = sqrt(pow(ship.position.x - point.x, 2) +
+								pow(ship.position.y - point.y, 2));
+	if (distanceLeft > 4)
+	{
+		CGFloat distanceToTravel = timeDelta * shipSpeed;
+		CGFloat angle = atan2(point.y - ship.position.y,
+							  point.x - ship.position.x);
+		CGFloat yOffset = distanceToTravel * sin(angle);
+		CGFloat xOffset = distanceToTravel * cos(angle);
+		
+		CGPoint pt = ship.position;
+		pt.x += xOffset;
+		pt.y += yOffset;
+		ship.position = pt;
 	}
 }
 
