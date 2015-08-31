@@ -11,7 +11,7 @@
 
 @interface RCWMyScene()
 
-//@property (nonatomic, weak) UItouch *shipTouch;
+@property (nonatomic, weak) UITouch *shipTouch;
 
 @end
 
@@ -35,11 +35,19 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	UITouch *touch = [touches anyObject];
-	CGPoint touchPoint = [touch locationInNode:self];
-	
-	SKNode *ship = [self childNodeWithName:@"ship"];
-	ship.position = touchPoint;
+	_shipTouch = [touches anyObject];
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+	if (_shipTouch)
+	{
+		SKNode *ship = [self childNodeWithName:@"ship"];
+		//ship.position = [_shipTouch locationInNode:self];
+		
+		CGPoint touchPoint = [_shipTouch locationInNode:self];
+		ship.position = touchPoint;
+	}
 }
 
 @end
