@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB89EBD418AA613D0076391B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB89EBD318AA613D0076391B /* Foundation.framework */; };
+		AB89EBD618AA613D0076391B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB89EBD518AA613D0076391B /* CoreGraphics.framework */; };
+		AB89EBD818AA613D0076391B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB89EBD718AA613D0076391B /* UIKit.framework */; };
+		AB89EBDA18AA613D0076391B /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB89EBD918AA613D0076391B /* SpriteKit.framework */; };
+		AB89EBE018AA613D0076391B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB89EBDE18AA613D0076391B /* InfoPlist.strings */; };
+		AB89EBE218AA613D0076391B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBE118AA613D0076391B /* main.m */; };
+		AB89EBE618AA613D0076391B /* RCWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBE518AA613D0076391B /* RCWAppDelegate.m */; };
+		AB89EBE918AA613D0076391B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB89EBE718AA613D0076391B /* Main.storyboard */; };
+		AB89EBEC18AA613D0076391B /* RCWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBEB18AA613D0076391B /* RCWViewController.m */; };
+		AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AB89EBEE18AA613D0076391B /* RCWMyScene.m */; };
+		AB89EBF318AA613D0076391B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB89EBF218AA613D0076391B /* Images.xcassets */; };
+		AB89EC1518AA70E40076391B /* paddle-box.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC0F18AA70E40076391B /* paddle-box.png */; };
+		AB89EC1618AA70E40076391B /* plunger.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1018AA70E40076391B /* plunger.png */; };
+		AB89EC1718AA70E40076391B /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1118AA70E40076391B /* target.png */; };
+		AB89EC1818AA70E40076391B /* bumper.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1218AA70E40076391B /* bumper.png */; };
+		AB89EC1918AA70E40076391B /* pinball.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1318AA70E40076391B /* pinball.png */; };
+		AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */ = {isa = PBXBuildFile; fileRef = AB89EC1418AA70E40076391B /* paddle-anchor.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AB89EBD018AA613D0076391B /* PhysicsBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB89EBD318AA613D0076391B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB89EBD518AA613D0076391B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB89EBD718AA613D0076391B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB89EBD918AA613D0076391B /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		AB89EBDD18AA613D0076391B /* PhysicsBall-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhysicsBall-Info.plist"; sourceTree = "<group>"; };
+		AB89EBDF18AA613D0076391B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB89EBE118AA613D0076391B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB89EBE318AA613D0076391B /* PhysicsBall-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhysicsBall-Prefix.pch"; sourceTree = "<group>"; };
+		AB89EBE418AA613D0076391B /* RCWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWAppDelegate.h; sourceTree = "<group>"; };
+		AB89EBE518AA613D0076391B /* RCWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWAppDelegate.m; sourceTree = "<group>"; };
+		AB89EBE818AA613D0076391B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB89EBEA18AA613D0076391B /* RCWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWViewController.h; sourceTree = "<group>"; };
+		AB89EBEB18AA613D0076391B /* RCWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWViewController.m; sourceTree = "<group>"; };
+		AB89EBED18AA613D0076391B /* RCWMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWMyScene.h; sourceTree = "<group>"; };
+		AB89EBEE18AA613D0076391B /* RCWMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWMyScene.m; sourceTree = "<group>"; };
+		AB89EBF218AA613D0076391B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AB89EC0F18AA70E40076391B /* paddle-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-box.png"; sourceTree = "<group>"; };
+		AB89EC1018AA70E40076391B /* plunger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plunger.png; sourceTree = "<group>"; };
+		AB89EC1118AA70E40076391B /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		AB89EC1218AA70E40076391B /* bumper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bumper.png; sourceTree = "<group>"; };
+		AB89EC1318AA70E40076391B /* pinball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinball.png; sourceTree = "<group>"; };
+		AB89EC1418AA70E40076391B /* paddle-anchor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-anchor.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB89EBCD18AA613D0076391B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB89EBD618AA613D0076391B /* CoreGraphics.framework in Frameworks */,
+				AB89EBD818AA613D0076391B /* UIKit.framework in Frameworks */,
+				AB89EBDA18AA613D0076391B /* SpriteKit.framework in Frameworks */,
+				AB89EBD418AA613D0076391B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB89EBC718AA613D0076391B = {
+			isa = PBXGroup;
+			children = (
+				AB89EBDB18AA613D0076391B /* PhysicsBall */,
+				AB89EBD218AA613D0076391B /* Frameworks */,
+				AB89EBD118AA613D0076391B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB89EBD118AA613D0076391B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB89EBD018AA613D0076391B /* PhysicsBall.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB89EBD218AA613D0076391B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB89EBD318AA613D0076391B /* Foundation.framework */,
+				AB89EBD518AA613D0076391B /* CoreGraphics.framework */,
+				AB89EBD718AA613D0076391B /* UIKit.framework */,
+				AB89EBD918AA613D0076391B /* SpriteKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB89EBDB18AA613D0076391B /* PhysicsBall */ = {
+			isa = PBXGroup;
+			children = (
+				AB89EBE418AA613D0076391B /* RCWAppDelegate.h */,
+				AB89EBE518AA613D0076391B /* RCWAppDelegate.m */,
+				AB89EBE718AA613D0076391B /* Main.storyboard */,
+				AB89EBEA18AA613D0076391B /* RCWViewController.h */,
+				AB89EBEB18AA613D0076391B /* RCWViewController.m */,
+				AB89EBED18AA613D0076391B /* RCWMyScene.h */,
+				AB89EBEE18AA613D0076391B /* RCWMyScene.m */,
+				AB89EC0F18AA70E40076391B /* paddle-box.png */,
+				AB89EC1018AA70E40076391B /* plunger.png */,
+				AB89EC1118AA70E40076391B /* target.png */,
+				AB89EC1218AA70E40076391B /* bumper.png */,
+				AB89EC1318AA70E40076391B /* pinball.png */,
+				AB89EC1418AA70E40076391B /* paddle-anchor.png */,
+				AB89EBF218AA613D0076391B /* Images.xcassets */,
+				AB89EBDC18AA613D0076391B /* Supporting Files */,
+			);
+			path = PhysicsBall;
+			sourceTree = "<group>";
+		};
+		AB89EBDC18AA613D0076391B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB89EBDD18AA613D0076391B /* PhysicsBall-Info.plist */,
+				AB89EBDE18AA613D0076391B /* InfoPlist.strings */,
+				AB89EBE118AA613D0076391B /* main.m */,
+				AB89EBE318AA613D0076391B /* PhysicsBall-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB89EBCF18AA613D0076391B /* PhysicsBall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB89EC0918AA613D0076391B /* Build configuration list for PBXNativeTarget "PhysicsBall" */;
+			buildPhases = (
+				AB89EBCC18AA613D0076391B /* Sources */,
+				AB89EBCD18AA613D0076391B /* Frameworks */,
+				AB89EBCE18AA613D0076391B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhysicsBall;
+			productName = PhysicsBall;
+			productReference = AB89EBD018AA613D0076391B /* PhysicsBall.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB89EBC818AA613D0076391B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RCW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rubber City Wizards";
+			};
+			buildConfigurationList = AB89EBCB18AA613D0076391B /* Build configuration list for PBXProject "PhysicsBall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB89EBC718AA613D0076391B;
+			productRefGroup = AB89EBD118AA613D0076391B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB89EBCF18AA613D0076391B /* PhysicsBall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB89EBCE18AA613D0076391B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB89EBE018AA613D0076391B /* InfoPlist.strings in Resources */,
+				AB89EC1518AA70E40076391B /* paddle-box.png in Resources */,
+				AB89EC1718AA70E40076391B /* target.png in Resources */,
+				AB89EBF318AA613D0076391B /* Images.xcassets in Resources */,
+				AB89EC1818AA70E40076391B /* bumper.png in Resources */,
+				AB89EBE918AA613D0076391B /* Main.storyboard in Resources */,
+				AB89EC1918AA70E40076391B /* pinball.png in Resources */,
+				AB89EC1618AA70E40076391B /* plunger.png in Resources */,
+				AB89EC1A18AA70E40076391B /* paddle-anchor.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB89EBCC18AA613D0076391B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB89EBE218AA613D0076391B /* main.m in Sources */,
+				AB89EBEC18AA613D0076391B /* RCWViewController.m in Sources */,
+				AB89EBE618AA613D0076391B /* RCWAppDelegate.m in Sources */,
+				AB89EBEF18AA613D0076391B /* RCWMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB89EBDE18AA613D0076391B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB89EBDF18AA613D0076391B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB89EBE718AA613D0076391B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB89EBE818AA613D0076391B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB89EC0718AA613D0076391B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB89EC0818AA613D0076391B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB89EC0A18AA613D0076391B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsBall/PhysicsBall-Prefix.pch";
+				INFOPLIST_FILE = "PhysicsBall/PhysicsBall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB89EC0B18AA613D0076391B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PhysicsBall/PhysicsBall-Prefix.pch";
+				INFOPLIST_FILE = "PhysicsBall/PhysicsBall-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB89EBCB18AA613D0076391B /* Build configuration list for PBXProject "PhysicsBall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB89EC0718AA613D0076391B /* Debug */,
+				AB89EC0818AA613D0076391B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB89EC0918AA613D0076391B /* Build configuration list for PBXNativeTarget "PhysicsBall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB89EC0A18AA613D0076391B /* Debug */,
+				AB89EC0B18AA613D0076391B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB89EBC818AA613D0076391B /* Project object */;
+}
