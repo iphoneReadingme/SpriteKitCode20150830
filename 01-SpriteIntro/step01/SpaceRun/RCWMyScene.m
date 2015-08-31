@@ -8,6 +8,13 @@
 ***/
 #import "RCWMyScene.h"
 
+
+@interface RCWMyScene()
+
+//@property (nonatomic, weak) UItouch *shipTouch;
+
+@end
+
 @implementation RCWMyScene
 
 - (id)initWithSize:(CGSize)size
@@ -18,6 +25,9 @@
         NSString *name = @"Spaceship.png";
         SKSpriteNode *ship = [SKSpriteNode spriteNodeWithImageNamed:name];
         ship.position = CGPointMake(size.width/2, size.height/2);
+		ship.size = CGSizeMake(40, 40);
+		ship.name = @"ship";
+		
         [self addChild:ship];
     }
     return self;
