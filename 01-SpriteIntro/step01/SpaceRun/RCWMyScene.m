@@ -33,4 +33,13 @@
     return self;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	UITouch *touch = [touches anyObject];
+	CGPoint touchPoint = [touch locationInNode:self];
+	
+	SKNode *ship = [self childNodeWithName:@"ship"];
+	ship.position = touchPoint;
+}
+
 @end
