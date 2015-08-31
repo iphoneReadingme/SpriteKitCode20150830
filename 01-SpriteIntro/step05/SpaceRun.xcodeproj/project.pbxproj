@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB4962A5182ABA7D005FD042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A4182ABA7D005FD042 /* Foundation.framework */; };
+		AB4962A7182ABA7D005FD042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */; };
+		AB4962A9182ABA7D005FD042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A8182ABA7D005FD042 /* UIKit.framework */; };
+		AB4962AB182ABA7D005FD042 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962AA182ABA7D005FD042 /* SpriteKit.framework */; };
+		AB4962B1182ABA7D005FD042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4962AF182ABA7D005FD042 /* InfoPlist.strings */; };
+		AB4962B3182ABA7D005FD042 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962B2182ABA7D005FD042 /* main.m */; };
+		AB4962B7182ABA7D005FD042 /* RCWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962B6182ABA7D005FD042 /* RCWAppDelegate.m */; };
+		AB4962BA182ABA7D005FD042 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4962B8182ABA7D005FD042 /* Main.storyboard */; };
+		AB4962BD182ABA7D005FD042 /* RCWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962BC182ABA7D005FD042 /* RCWViewController.m */; };
+		AB4962C0182ABA7D005FD042 /* RCWMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962BF182ABA7D005FD042 /* RCWMyScene.m */; };
+		AB4962C2182ABA7D005FD042 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4962C1182ABA7D005FD042 /* Spaceship.png */; };
+		AB4962C4182ABA7D005FD042 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4962C3182ABA7D005FD042 /* Images.xcassets */; };
+		AB4962CB182ABA7D005FD042 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962CA182ABA7D005FD042 /* XCTest.framework */; };
+		AB4962CC182ABA7D005FD042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A4182ABA7D005FD042 /* Foundation.framework */; };
+		AB4962CD182ABA7D005FD042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A8182ABA7D005FD042 /* UIKit.framework */; };
+		AB4962D5182ABA7D005FD042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4962D3182ABA7D005FD042 /* InfoPlist.strings */; };
+		AB4962D7182ABA7D005FD042 /* SpaceRunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962D6182ABA7D005FD042 /* SpaceRunTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB4962CE182ABA7D005FD042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB496299182ABA7D005FD042 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB4962A0182ABA7D005FD042;
+			remoteInfo = SpaceRun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB4962A1182ABA7D005FD042 /* SpaceRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4962A4182ABA7D005FD042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB4962A8182ABA7D005FD042 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB4962AA182ABA7D005FD042 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		AB4962AE182ABA7D005FD042 /* SpaceRun-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceRun-Info.plist"; sourceTree = "<group>"; };
+		AB4962B0182ABA7D005FD042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB4962B2182ABA7D005FD042 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB4962B4182ABA7D005FD042 /* SpaceRun-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpaceRun-Prefix.pch"; sourceTree = "<group>"; };
+		AB4962B5182ABA7D005FD042 /* RCWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWAppDelegate.h; sourceTree = "<group>"; };
+		AB4962B6182ABA7D005FD042 /* RCWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWAppDelegate.m; sourceTree = "<group>"; };
+		AB4962B9182ABA7D005FD042 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB4962BB182ABA7D005FD042 /* RCWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWViewController.h; sourceTree = "<group>"; };
+		AB4962BC182ABA7D005FD042 /* RCWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWViewController.m; sourceTree = "<group>"; };
+		AB4962BE182ABA7D005FD042 /* RCWMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWMyScene.h; sourceTree = "<group>"; };
+		AB4962BF182ABA7D005FD042 /* RCWMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWMyScene.m; sourceTree = "<group>"; };
+		AB4962C1182ABA7D005FD042 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		AB4962C3182ABA7D005FD042 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AB4962C9182ABA7D005FD042 /* SpaceRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4962CA182ABA7D005FD042 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AB4962D2182ABA7D005FD042 /* SpaceRunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceRunTests-Info.plist"; sourceTree = "<group>"; };
+		AB4962D4182ABA7D005FD042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB4962D6182ABA7D005FD042 /* SpaceRunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceRunTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB49629E182ABA7D005FD042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962A7182ABA7D005FD042 /* CoreGraphics.framework in Frameworks */,
+				AB4962A9182ABA7D005FD042 /* UIKit.framework in Frameworks */,
+				AB4962AB182ABA7D005FD042 /* SpriteKit.framework in Frameworks */,
+				AB4962A5182ABA7D005FD042 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB4962C6182ABA7D005FD042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962CB182ABA7D005FD042 /* XCTest.framework in Frameworks */,
+				AB4962CD182ABA7D005FD042 /* UIKit.framework in Frameworks */,
+				AB4962CC182ABA7D005FD042 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB496298182ABA7D005FD042 = {
+			isa = PBXGroup;
+			children = (
+				AB4962AC182ABA7D005FD042 /* SpaceRun */,
+				AB4962D0182ABA7D005FD042 /* SpaceRunTests */,
+				AB4962A3182ABA7D005FD042 /* Frameworks */,
+				AB4962A2182ABA7D005FD042 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB4962A2182ABA7D005FD042 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962A1182ABA7D005FD042 /* SpaceRun.app */,
+				AB4962C9182ABA7D005FD042 /* SpaceRunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB4962A3182ABA7D005FD042 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962A4182ABA7D005FD042 /* Foundation.framework */,
+				AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */,
+				AB4962A8182ABA7D005FD042 /* UIKit.framework */,
+				AB4962AA182ABA7D005FD042 /* SpriteKit.framework */,
+				AB4962CA182ABA7D005FD042 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB4962AC182ABA7D005FD042 /* SpaceRun */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962B5182ABA7D005FD042 /* RCWAppDelegate.h */,
+				AB4962B6182ABA7D005FD042 /* RCWAppDelegate.m */,
+				AB4962B8182ABA7D005FD042 /* Main.storyboard */,
+				AB4962BB182ABA7D005FD042 /* RCWViewController.h */,
+				AB4962BC182ABA7D005FD042 /* RCWViewController.m */,
+				AB4962BE182ABA7D005FD042 /* RCWMyScene.h */,
+				AB4962BF182ABA7D005FD042 /* RCWMyScene.m */,
+				AB4962C1182ABA7D005FD042 /* Spaceship.png */,
+				AB4962C3182ABA7D005FD042 /* Images.xcassets */,
+				AB4962AD182ABA7D005FD042 /* Supporting Files */,
+			);
+			path = SpaceRun;
+			sourceTree = "<group>";
+		};
+		AB4962AD182ABA7D005FD042 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962AE182ABA7D005FD042 /* SpaceRun-Info.plist */,
+				AB4962AF182ABA7D005FD042 /* InfoPlist.strings */,
+				AB4962B2182ABA7D005FD042 /* main.m */,
+				AB4962B4182ABA7D005FD042 /* SpaceRun-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB4962D0182ABA7D005FD042 /* SpaceRunTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962D6182ABA7D005FD042 /* SpaceRunTests.m */,
+				AB4962D1182ABA7D005FD042 /* Supporting Files */,
+			);
+			path = SpaceRunTests;
+			sourceTree = "<group>";
+		};
+		AB4962D1182ABA7D005FD042 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB4962D2182ABA7D005FD042 /* SpaceRunTests-Info.plist */,
+				AB4962D3182ABA7D005FD042 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB4962A0182ABA7D005FD042 /* SpaceRun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB4962DA182ABA7D005FD042 /* Build configuration list for PBXNativeTarget "SpaceRun" */;
+			buildPhases = (
+				AB49629D182ABA7D005FD042 /* Sources */,
+				AB49629E182ABA7D005FD042 /* Frameworks */,
+				AB49629F182ABA7D005FD042 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpaceRun;
+			productName = SpaceRun;
+			productReference = AB4962A1182ABA7D005FD042 /* SpaceRun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB4962C8182ABA7D005FD042 /* SpaceRunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB4962DD182ABA7D005FD042 /* Build configuration list for PBXNativeTarget "SpaceRunTests" */;
+			buildPhases = (
+				AB4962C5182ABA7D005FD042 /* Sources */,
+				AB4962C6182ABA7D005FD042 /* Frameworks */,
+				AB4962C7182ABA7D005FD042 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB4962CF182ABA7D005FD042 /* PBXTargetDependency */,
+			);
+			name = SpaceRunTests;
+			productName = SpaceRunTests;
+			productReference = AB4962C9182ABA7D005FD042 /* SpaceRunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB496299182ABA7D005FD042 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RCW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rubber City Wizards";
+				TargetAttributes = {
+					AB4962C8182ABA7D005FD042 = {
+						TestTargetID = AB4962A0182ABA7D005FD042;
+					};
+				};
+			};
+			buildConfigurationList = AB49629C182ABA7D005FD042 /* Build configuration list for PBXProject "SpaceRun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB496298182ABA7D005FD042;
+			productRefGroup = AB4962A2182ABA7D005FD042 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB4962A0182ABA7D005FD042 /* SpaceRun */,
+				AB4962C8182ABA7D005FD042 /* SpaceRunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB49629F182ABA7D005FD042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962B1182ABA7D005FD042 /* InfoPlist.strings in Resources */,
+				AB4962C4182ABA7D005FD042 /* Images.xcassets in Resources */,
+				AB4962C2182ABA7D005FD042 /* Spaceship.png in Resources */,
+				AB4962BA182ABA7D005FD042 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB4962C7182ABA7D005FD042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962D5182ABA7D005FD042 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB49629D182ABA7D005FD042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962B3182ABA7D005FD042 /* main.m in Sources */,
+				AB4962BD182ABA7D005FD042 /* RCWViewController.m in Sources */,
+				AB4962B7182ABA7D005FD042 /* RCWAppDelegate.m in Sources */,
+				AB4962C0182ABA7D005FD042 /* RCWMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB4962C5182ABA7D005FD042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4962D7182ABA7D005FD042 /* SpaceRunTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB4962CF182ABA7D005FD042 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB4962A0182ABA7D005FD042 /* SpaceRun */;
+			targetProxy = AB4962CE182ABA7D005FD042 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AB4962AF182ABA7D005FD042 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB4962B0182ABA7D005FD042 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB4962B8182ABA7D005FD042 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB4962B9182ABA7D005FD042 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AB4962D3182ABA7D005FD042 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB4962D4182ABA7D005FD042 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB4962D8182ABA7D005FD042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB4962D9182ABA7D005FD042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB4962DB182ABA7D005FD042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceRun/SpaceRun-Prefix.pch";
+				INFOPLIST_FILE = "SpaceRun/SpaceRun-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB4962DC182ABA7D005FD042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceRun/SpaceRun-Prefix.pch";
+				INFOPLIST_FILE = "SpaceRun/SpaceRun-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AB4962DE182ABA7D005FD042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceRun.app/SpaceRun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceRun/SpaceRun-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SpaceRunTests/SpaceRunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AB4962DF182ABA7D005FD042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpaceRun.app/SpaceRun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpaceRun/SpaceRun-Prefix.pch";
+				INFOPLIST_FILE = "SpaceRunTests/SpaceRunTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB49629C182ABA7D005FD042 /* Build configuration list for PBXProject "SpaceRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4962D8182ABA7D005FD042 /* Debug */,
+				AB4962D9182ABA7D005FD042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB4962DA182ABA7D005FD042 /* Build configuration list for PBXNativeTarget "SpaceRun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4962DB182ABA7D005FD042 /* Debug */,
+				AB4962DC182ABA7D005FD042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB4962DD182ABA7D005FD042 /* Build configuration list for PBXNativeTarget "SpaceRunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4962DE182ABA7D005FD042 /* Debug */,
+				AB4962DF182ABA7D005FD042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB496299182ABA7D005FD042 /* Project object */;
+}
