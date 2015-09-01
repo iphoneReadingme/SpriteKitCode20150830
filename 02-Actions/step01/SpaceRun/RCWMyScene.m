@@ -41,11 +41,12 @@
     if (self.lastUpdateTime == 0) {
         self.lastUpdateTime = currentTime;
     }
-    NSTimeInterval timeDelta = currentTime - self.lastUpdateTime;
-
-    if (self.shipTouch) {
-        [self moveShipTowardPoint:[self.shipTouch locationInNode:self]
-                      byTimeDelta:timeDelta];
+    if (self.shipTouch)
+	{
+		NSTimeInterval timeDelta = currentTime - _lastUpdateTime;
+		CGPoint touchPoint = [_shipTouch locationInNode:self];
+		
+        [self moveShipTowardPoint:touchPoint byTimeDelta:timeDelta];
 
         if (currentTime - self.lastShotFireTime > 0.5) {
             [self shoot];
@@ -70,9 +71,11 @@
                               point.y - ship.position.y);
         CGFloat yOffset = distanceToTravel * cos(angle);
         CGFloat xOffset = distanceToTravel * sin(angle);
-
-        ship.position = CGPointMake(ship.position.x + xOffset,
-                                    ship.position.y + yOffset);
+		
+		CGPoint pt = ship.position;
+		pt.x += xOffset;
+		pt.y += yOffset;
+		ship.position = pt;
     }
 }
 
