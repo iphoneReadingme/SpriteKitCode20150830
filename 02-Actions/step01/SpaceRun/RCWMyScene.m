@@ -47,6 +47,12 @@
 		CGPoint touchPoint = [_shipTouch locationInNode:self];
 		
         [self moveShipTowardPoint:touchPoint byTimeDelta:timeDelta];
+
+        if (currentTime - _lastShotFireTime > 0.5)
+		{
+            [self shoot];
+            _lastShotFireTime = currentTime;
+        }
     }
 
     self.lastUpdateTime = currentTime;
@@ -76,6 +82,15 @@
 
 - (void)shoot
 {
+    SKNode *ship = [self childNodeWithName:@"ship"];
+
+    SKSpriteNode *photon = [SKSpriteNode spriteNodeWithImageNamed:@"photon"];
+    photon.name = @"photon";
+    photon.position = ship.position;
+    [self addChild:photon];
+
+    SKAction *fly = [SKAction moveByX:0 y:self.size.height+photon.size.height duration:0.5];
+    [photon runAction:fly];
 }
 
 @end
