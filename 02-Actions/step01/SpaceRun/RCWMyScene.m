@@ -11,7 +11,7 @@
 @interface RCWMyScene ()
 @property (nonatomic, weak) UITouch *shipTouch;
 @property (nonatomic) NSTimeInterval lastUpdateTime;
-@property (nonatomic) NSTimeInterval lastShotFireTime;
+@property (nonatomic) NSTimeInterval lastShortFireTime;
 @end
 
 @implementation RCWMyScene
@@ -48,11 +48,13 @@
 		
         [self moveShipTowardPoint:touchPoint byTimeDelta:timeDelta];
 
-        if (currentTime - _lastShotFireTime > 0.5)
+        if (currentTime - _lastShortFireTime > 0.5)
 		{
             [self shoot];
-            _lastShotFireTime = currentTime;
+            _lastShortFireTime = currentTime;
         }
+		
+		[self randomLoadObstacle];
     }
 
     self.lastUpdateTime = currentTime;
@@ -90,7 +92,56 @@
     [self addChild:photon];
 
     SKAction *fly = [SKAction moveByX:0 y:self.size.height+photon.size.height duration:0.5];
-    [photon runAction:fly];
+	SKAction *remove = [SKAction removeFromParent]; ///< 使用完成后删除节点，清除内存空间
+	SKAction *fireAndRemove = [SKAction sequence:@[fly, remove]];
+    [photon runAction:fireAndRemove];
+}
+
+#pragma mark - == 随机掉落、出现障碍物
+- (void)randomLoadObstacle
+{
+	///< 随机值[0, 999];
+	CGFloat randomValue = arc4random_uniform(1000);
+	if (randomValue < 15)
+	{
+		CGFloat sizeValue = arc4random_uniform(30) + 15; ///< [15, 44]
+		CGPoint startPt = CGPointZero;
+		CGPoint endPt = CGPointZero;
+		startPt.y = self.size.height + sizeValue;
+		endPt.y = 0 - sizeValue;
+		
+		CGFloat maxX = self.size.width; ///< value of the scene
+		CGFloat offsetX = maxX * 0.25f;   ///< maxX / 4
+		startPt.x = arc4random_uniform(maxX + 2*offsetX) - offsetX;  ///< [-offsetX, maxX + offsetX]
+		endPt.x = arc4random_uniform(maxX);
+		
+		[self dropObstacle:sizeValue from:startPt to:endPt];
+	}
+}
+
+- (void)dropObstacle:(CGFloat)obstacleSize from:(CGPoint)startPt to:(CGPoint)endPt
+{
+	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid.png"];
+	obstacle.name = @"obstacle";
+	obstacle.size = CGSizeMake(obstacleSize, obstacleSize);
+	obstacle.position = startPt;
+	
+	[self addChild:obstacle];
+	
+	///< drop action
+	NSTimeInterval duration = arc4random_uniform(4) + 3;
+	SKAction *moveDown = [SKAction moveTo:endPt duration:duration];
+	SKAction *remove = [SKAction removeFromParent];
+	SKAction *travelAndRemove = [SKAction sequence:@[moveDown, remove]];
+	
+	///< rotate action
+	duration = arc4random_uniform(2) + 1;
+	SKAction *spin = [SKAction rotateByAngle:3 duration:duration];
+	SKAction *spinForever = [SKAction repeatActionForever:spin];
+	
+	///< action group
+	SKAction *groupAction = [SKAction group:@[spinForever, travelAndRemove]];
+	[obstacle runAction:groupAction];
 }
 
 @end
