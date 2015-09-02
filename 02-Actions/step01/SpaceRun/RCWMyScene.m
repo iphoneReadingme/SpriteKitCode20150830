@@ -14,6 +14,7 @@
 #define kShipNodeName          @"ship"
 #define kPhotonNodeName        @"photon"
 #define kObstacleNodeName      @"Obstacle"
+#define kEnemyNodeName         @"enemy"
 
 
 @interface RCWMyScene ()
@@ -22,7 +23,7 @@
 @property (nonatomic) NSTimeInterval lastUpdateTime;
 @property (nonatomic) NSTimeInterval lastShortFireTime;
 @property (nonatomic) CGFloat        shipFireRate;    ///< 子弹发射频率（时间间隔）
-
+@property (nonatomic) CGFloat        shipSpeed;       ///< 飞船移动速度 // points per second
 @end
 
 
@@ -40,6 +41,7 @@
         [self addChild:ship];
 		
 		_shipFireRate = 0.3f;
+		_shipSpeed = 300;
     }
     return self;
 }
@@ -64,6 +66,14 @@
 {
 	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"Resource/asteroid.png"];
 	obstacle.name = kObstacleNodeName;
+	
+	return obstacle;
+}
+
+- (SKSpriteNode *)enemyShipSpriteNode
+{
+	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"Resource/enemy.png"];
+	obstacle.name = kEnemyNodeName;
 	
 	return obstacle;
 }
@@ -100,13 +110,12 @@
 
 - (void)moveShipTowardPoint:(CGPoint)point byTimeDelta:(NSTimeInterval)timeDelta
 {
-    CGFloat shipSpeed = 130; // points per second
     SKNode *ship = [self childNodeWithName:kShipNodeName];
     CGFloat distanceLeft = sqrt(pow(ship.position.x - point.x, 2) +
                                 pow(ship.position.y - point.y, 2));
 
     if (distanceLeft > 4) {
-        CGFloat distanceToTravel = timeDelta * shipSpeed;
+        CGFloat distanceToTravel = timeDelta * _shipSpeed;
 
         CGFloat angle = atan2(point.x - ship.position.x,
                               point.y - ship.position.y);
@@ -135,25 +144,46 @@
 }
 
 #pragma mark - == 随机掉落、出现障碍物
+
 - (void)randomLoadObstacle
 {
 	///< 随机值[0, 999];
-	CGFloat randomValue = arc4random_uniform(1000);
+	NSInteger randomValue = arc4random_uniform(1000);
 	if (randomValue < 15)
 	{
-		CGFloat sizeValue = arc4random_uniform(30) + 15; ///< [15, 44]
-		CGPoint startPt = CGPointZero;
-		CGPoint endPt = CGPointZero;
-		startPt.y = self.size.height + sizeValue;
-		endPt.y = 0 - sizeValue;
-		
-		CGFloat maxX = self.size.width; ///< value of the scene
-		CGFloat offsetX = maxX * 0.25f;   ///< maxX / 4
-		startPt.x = arc4random_uniform(maxX + 2*offsetX) - offsetX;  ///< [-offsetX, maxX + offsetX]
-		endPt.x = arc4random_uniform(maxX);
-		
-		[self dropObstacle:sizeValue from:startPt to:endPt];
+		[self dropThing];
 	}
+}
+
+- (void)dropThing
+{
+	///< 骰子
+	NSInteger dice = arc4random_uniform(100);
+	if (dice < 15)
+	{
+		///< 15% 概率出现乱舰
+		[self dropEnemyShip];
+	}
+	else
+	{
+		[self dropAsteroid];
+	}
+}
+
+- (void)dropAsteroid
+{
+	CGFloat sizeValue = arc4random_uniform(30) + 15; ///< [15, 44]
+	CGPoint startPt = CGPointZero;
+	CGPoint endPt = CGPointZero;
+	startPt.y = self.size.height + sizeValue;
+	endPt.y = 0 - sizeValue;
+	
+	CGFloat maxX = self.size.width; ///< value of the scene
+	CGFloat offsetX = maxX * 0.25f;   ///< maxX / 4
+	startPt.x = arc4random_uniform(maxX + 2*offsetX) - offsetX;  ///< [-offsetX, maxX + offsetX]
+	endPt.x = arc4random_uniform(maxX);
+	
+	[self dropObstacle:sizeValue from:startPt to:endPt];
 }
 
 - (void)dropObstacle:(CGFloat)obstacleSize from:(CGPoint)startPt to:(CGPoint)endPt
@@ -213,6 +243,38 @@
 	}];
 	
 	ship = nil;
+}
+
+- (void)dropEnemyShip
+{
+	CGFloat sizeValue = 30;
+	CGPoint startPt = CGPointZero;
+	CGPoint endPt = CGPointZero;
+	startPt.y = self.size.height + sizeValue;
+	endPt.y = 0 - sizeValue;
+	
+	CGFloat maxX = self.size.width; ///< value of the scene
+	CGFloat offsetX = 20.0f;   ///< maxX / 4
+	startPt.x = arc4random_uniform(maxX + 2*offsetX) - offsetX;  ///< [-offsetX, maxX + offsetX]
+	endPt.x = arc4random_uniform(maxX);
+	
+	[self dropEnemyShip:sizeValue from:startPt to:endPt];
+}
+
+- (void)dropEnemyShip:(CGFloat)sizeValue from:(CGPoint)startPt to:(CGPoint)endPt
+{
+	SKSpriteNode *enemyShip = [self enemyShipSpriteNode];
+	enemyShip.size = CGSizeMake(sizeValue, sizeValue);
+	enemyShip.position = startPt;
+	
+	[self addChild:enemyShip];
+	
+	///< add Action
+	NSTimeInterval duration = 7;
+	SKAction *moveDown = [SKAction moveTo:endPt duration:duration];
+	SKAction *remove = [SKAction removeFromParent];
+	SKAction *sequence = [SKAction sequence:@[moveDown, remove]];
+	[enemyShip runAction:sequence];
 }
 
 @end
