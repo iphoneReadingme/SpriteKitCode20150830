@@ -6,13 +6,25 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/pssprite for more book information.
 ***/
+
+
 #import "RCWMyScene.h"
 
+
+#define kShipNodeName          @"ship"
+#define kPhotonNodeName        @"photon"
+#define kObstacleNodeName      @"Obstacle"
+
+
 @interface RCWMyScene ()
-@property (nonatomic, weak) UITouch *shipTouch;
+
+@property (nonatomic, weak) UITouch  *shipTouch;
 @property (nonatomic) NSTimeInterval lastUpdateTime;
 @property (nonatomic) NSTimeInterval lastShortFireTime;
+@property (nonatomic) CGFloat        shipFireRate;    ///< 子弹发射频率（时间间隔）
+
 @end
+
 
 @implementation RCWMyScene
 
@@ -25,8 +37,10 @@
         SKSpriteNode *ship = [SKSpriteNode spriteNodeWithImageNamed:name];
         ship.position = CGPointMake(size.width/2, size.height/2);
         ship.size = CGSizeMake(40, 40);
-        ship.name = @"ship";
+        ship.name = kShipNodeName;
         [self addChild:ship];
+		
+		_shipFireRate = 0.3f;
     }
     return self;
 }
@@ -48,7 +62,7 @@
 		
         [self moveShipTowardPoint:touchPoint byTimeDelta:timeDelta];
 
-        if (currentTime - _lastShortFireTime > 0.5)
+        if (currentTime - _lastShortFireTime > _shipFireRate)
 		{
             [self shoot];
             _lastShortFireTime = currentTime;
@@ -64,7 +78,7 @@
 - (void)moveShipTowardPoint:(CGPoint)point byTimeDelta:(NSTimeInterval)timeDelta
 {
     CGFloat shipSpeed = 130; // points per second
-    SKNode *ship = [self childNodeWithName:@"ship"];
+    SKNode *ship = [self childNodeWithName:kShipNodeName];
     CGFloat distanceLeft = sqrt(pow(ship.position.x - point.x, 2) +
                                 pow(ship.position.y - point.y, 2));
 
@@ -85,10 +99,10 @@
 
 - (void)shoot
 {
-    SKNode *ship = [self childNodeWithName:@"ship"];
+    SKNode *ship = [self childNodeWithName:kShipNodeName];
 
     SKSpriteNode *photon = [SKSpriteNode spriteNodeWithImageNamed:@"photon"];
-    photon.name = @"photon";
+    photon.name = kPhotonNodeName;
     photon.position = ship.position;
     [self addChild:photon];
 
@@ -123,7 +137,7 @@
 - (void)dropObstacle:(CGFloat)obstacleSize from:(CGPoint)startPt to:(CGPoint)endPt
 {
 	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid.png"];
-	obstacle.name = @"obstacle";
+	obstacle.name = kObstacleNodeName;
 	obstacle.size = CGSizeMake(obstacleSize, obstacleSize);
 	obstacle.position = startPt;
 	
@@ -154,11 +168,18 @@
 ///< 碰撞检测
 - (void)checkCollisions
 {
-	SKNode *ship = [self childNodeWithName:@"ship"];
+	SKNode *ship = [self childNodeWithName:kShipNodeName];
 	
-	[self enumerateChildNodesWithName:@"obstacle" usingBlock:^(SKNode *obstacle, BOOL *stop){
+	[self enumerateChildNodesWithName:kObstacleNodeName usingBlock:^(SKNode *obstacle, BOOL *stop){
 		
-		[self enumerateChildNodesWithName:@"Photon" usingBlock:^(SKNode *photon, BOOL *stop){
+		[self enumerateChildNodesWithName:kPhotonNodeName usingBlock:^(SKNode *photon, BOOL *stop){
+			
+//			if ([ship intersectsNode:obstacle])
+//			{
+//				self.shipTouch = nil;
+//				[ship removeFromParent];
+//				[obstacle removeFromParent];
+//			}
 			
 			if ([photon intersectsNode:obstacle])
 			{
