@@ -56,6 +56,7 @@
     }
 	
 	[self randomLoadObstacle];
+	[self checkCollisions];
 	
     self.lastUpdateTime = currentTime;
 }
@@ -148,6 +149,28 @@
 	///< action group
 	SKAction *groupAction = [SKAction group:@[spinForever, zoomAction, travelAndRemove]];
 	[obstacle runAction:groupAction];
+}
+
+///< 碰撞检测
+- (void)checkCollisions
+{
+	SKNode *ship = [self childNodeWithName:@"ship"];
+	
+	[self enumerateChildNodesWithName:@"obstacle" usingBlock:^(SKNode *obstacle, BOOL *stop){
+		
+		[self enumerateChildNodesWithName:@"Photon" usingBlock:^(SKNode *photon, BOOL *stop){
+			
+			if ([photon intersectsNode:obstacle])
+			{
+				[photon removeFromParent];
+				[obstacle removeFromParent];
+				*stop = YES;
+			}
+		}];
+		obstacle = nil;
+	}];
+	
+	ship = nil;
 }
 
 @end
