@@ -53,10 +53,10 @@
             [self shoot];
             _lastShortFireTime = currentTime;
         }
-		
-		[self randomLoadObstacle];
     }
-
+	
+	[self randomLoadObstacle];
+	
     self.lastUpdateTime = currentTime;
 }
 
@@ -133,6 +133,12 @@
 	SKAction *moveDown = [SKAction moveTo:endPt duration:duration];
 	SKAction *remove = [SKAction removeFromParent];
 	SKAction *travelAndRemove = [SKAction sequence:@[moveDown, remove]];
+	//[obstacle runAction:travelAndRemove];
+	
+	obstacleSize = 2*obstacleSize;
+	SKAction *zoomIn = [SKAction resizeToWidth:obstacleSize height:obstacleSize duration:duration];
+	SKAction *zoomAction = [SKAction sequence:@[zoomIn]];
+	//[obstacle runAction:zoomAction];
 	
 	///< rotate action
 	duration = arc4random_uniform(2) + 1;
@@ -140,7 +146,7 @@
 	SKAction *spinForever = [SKAction repeatActionForever:spin];
 	
 	///< action group
-	SKAction *groupAction = [SKAction group:@[spinForever, travelAndRemove]];
+	SKAction *groupAction = [SKAction group:@[spinForever, zoomAction, travelAndRemove]];
 	[obstacle runAction:groupAction];
 }
 
