@@ -32,17 +32,40 @@
 {
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor blackColor];
-
-        NSString *name = @"Spaceship.png";
-        SKSpriteNode *ship = [SKSpriteNode spriteNodeWithImageNamed:name];
+		
+        SKSpriteNode *ship = [self spaceshipSpriteNode];
         ship.position = CGPointMake(size.width/2, size.height/2);
         ship.size = CGSizeMake(40, 40);
-        ship.name = kShipNodeName;
+		
         [self addChild:ship];
 		
 		_shipFireRate = 0.3f;
     }
     return self;
+}
+
+- (SKSpriteNode *)spaceshipSpriteNode
+{
+	SKSpriteNode * spaceship = [SKSpriteNode spriteNodeWithImageNamed:@"Resource/Spaceship.png"];
+	spaceship.name = kShipNodeName;
+	
+	return spaceship;
+}
+
+- (SKSpriteNode *)photonSpriteNode
+{
+	SKSpriteNode * photon = [SKSpriteNode spriteNodeWithImageNamed:@"Resource/photon.png"];
+	photon.name = kPhotonNodeName;
+	
+	return photon;
+}
+
+- (SKSpriteNode *)obstacleSpriteNode
+{
+	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"Resource/asteroid.png"];
+	obstacle.name = kObstacleNodeName;
+	
+	return obstacle;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -101,8 +124,7 @@
 {
     SKNode *ship = [self childNodeWithName:kShipNodeName];
 
-    SKSpriteNode *photon = [SKSpriteNode spriteNodeWithImageNamed:@"photon"];
-    photon.name = kPhotonNodeName;
+    SKSpriteNode *photon = [self photonSpriteNode];
     photon.position = ship.position;
     [self addChild:photon];
 
@@ -136,8 +158,7 @@
 
 - (void)dropObstacle:(CGFloat)obstacleSize from:(CGPoint)startPt to:(CGPoint)endPt
 {
-	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:@"asteroid.png"];
-	obstacle.name = kObstacleNodeName;
+	SKSpriteNode * obstacle = [self obstacleSpriteNode];
 	obstacle.size = CGSizeMake(obstacleSize, obstacleSize);
 	obstacle.position = startPt;
 	

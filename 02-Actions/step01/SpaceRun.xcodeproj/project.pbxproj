@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6C2EE91B96FBCA00371EAF /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C2EE81B96FBCA00371EAF /* Resource */; };
 		AB4962A5182ABA7D005FD042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A4182ABA7D005FD042 /* Foundation.framework */; };
 		AB4962A7182ABA7D005FD042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */; };
 		AB4962A9182ABA7D005FD042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A8182ABA7D005FD042 /* UIKit.framework */; };
@@ -17,15 +18,12 @@
 		AB4962BA182ABA7D005FD042 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4962B8182ABA7D005FD042 /* Main.storyboard */; };
 		AB4962BD182ABA7D005FD042 /* RCWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962BC182ABA7D005FD042 /* RCWViewController.m */; };
 		AB4962C0182ABA7D005FD042 /* RCWMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962BF182ABA7D005FD042 /* RCWMyScene.m */; };
-		AB4962C2182ABA7D005FD042 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4962C1182ABA7D005FD042 /* Spaceship.png */; };
 		AB4962C4182ABA7D005FD042 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4962C3182ABA7D005FD042 /* Images.xcassets */; };
 		AB4962CB182ABA7D005FD042 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962CA182ABA7D005FD042 /* XCTest.framework */; };
 		AB4962CC182ABA7D005FD042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A4182ABA7D005FD042 /* Foundation.framework */; };
 		AB4962CD182ABA7D005FD042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A8182ABA7D005FD042 /* UIKit.framework */; };
 		AB4962D5182ABA7D005FD042 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB4962D3182ABA7D005FD042 /* InfoPlist.strings */; };
 		AB4962D7182ABA7D005FD042 /* SpaceRunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4962D6182ABA7D005FD042 /* SpaceRunTests.m */; };
-		ABB344E7184BECD50011497C /* photon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB344E6184BECD50011497C /* photon.png */; };
-		ABB344E9184BED040011497C /* asteroid.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB344E8184BED040011497C /* asteroid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6C2EE81B96FBCA00371EAF /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
 		AB4962A1182ABA7D005FD042 /* SpaceRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4962A4182ABA7D005FD042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,15 +54,12 @@
 		AB4962BC182ABA7D005FD042 /* RCWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWViewController.m; sourceTree = "<group>"; };
 		AB4962BE182ABA7D005FD042 /* RCWMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCWMyScene.h; sourceTree = "<group>"; };
 		AB4962BF182ABA7D005FD042 /* RCWMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCWMyScene.m; sourceTree = "<group>"; };
-		AB4962C1182ABA7D005FD042 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		AB4962C3182ABA7D005FD042 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AB4962C9182ABA7D005FD042 /* SpaceRunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceRunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4962CA182ABA7D005FD042 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AB4962D2182ABA7D005FD042 /* SpaceRunTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceRunTests-Info.plist"; sourceTree = "<group>"; };
 		AB4962D4182ABA7D005FD042 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB4962D6182ABA7D005FD042 /* SpaceRunTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpaceRunTests.m; sourceTree = "<group>"; };
-		ABB344E6184BECD50011497C /* photon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photon.png; sourceTree = "<group>"; };
-		ABB344E8184BED040011497C /* asteroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asteroid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +121,7 @@
 		AB4962AC182ABA7D005FD042 /* SpaceRun */ = {
 			isa = PBXGroup;
 			children = (
+				5B6C2EE81B96FBCA00371EAF /* Resource */,
 				AB4962B5182ABA7D005FD042 /* RCWAppDelegate.h */,
 				AB4962B6182ABA7D005FD042 /* RCWAppDelegate.m */,
 				AB4962B8182ABA7D005FD042 /* Main.storyboard */,
@@ -132,9 +129,6 @@
 				AB4962BC182ABA7D005FD042 /* RCWViewController.m */,
 				AB4962BE182ABA7D005FD042 /* RCWMyScene.h */,
 				AB4962BF182ABA7D005FD042 /* RCWMyScene.m */,
-				AB4962C1182ABA7D005FD042 /* Spaceship.png */,
-				ABB344E6184BECD50011497C /* photon.png */,
-				ABB344E8184BED040011497C /* asteroid.png */,
 				AB4962C3182ABA7D005FD042 /* Images.xcassets */,
 				AB4962AD182ABA7D005FD042 /* Supporting Files */,
 			);
@@ -247,11 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB344E7184BECD50011497C /* photon.png in Resources */,
+				5B6C2EE91B96FBCA00371EAF /* Resource in Resources */,
 				AB4962B1182ABA7D005FD042 /* InfoPlist.strings in Resources */,
-				ABB344E9184BED040011497C /* asteroid.png in Resources */,
 				AB4962C4182ABA7D005FD042 /* Images.xcassets in Resources */,
-				AB4962C2182ABA7D005FD042 /* Spaceship.png in Resources */,
 				AB4962BA182ABA7D005FD042 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
