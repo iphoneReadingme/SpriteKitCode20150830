@@ -248,7 +248,7 @@
 - (void)dropEnemyShip
 {
 	CGFloat sizeValue = 30;
-	CGPoint startPt = CGPointZero;
+	CGPoint startPt = CGPointZero;   ///< Enemy ship starts here
 	CGPoint endPt = CGPointZero;
 	startPt.y = self.size.height + sizeValue;
 	endPt.y = 0 - sizeValue;
