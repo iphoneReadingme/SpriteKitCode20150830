@@ -95,6 +95,17 @@
 	return [ResManagerHelp enemyShipSpriteNode];
 }
 
+- (SKSpriteNode *)powerupSpriteNode
+{
+	return [ResManagerHelp powerupSpriteNode];
+}
+
+- (SKSpriteNode *)shootingstarSpriteNode
+{
+	return [ResManagerHelp shootingstarSpriteNode];
+}
+
+///< touch Event
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     self.shipTouch = [touches anyObject];
@@ -158,6 +169,8 @@
 	SKAction *remove = [SKAction removeFromParent]; ///< 使用完成后删除节点，清除内存空间
 	SKAction *fireAndRemove = [SKAction sequence:@[fly, remove]];
     [photon runAction:fireAndRemove];
+	
+	[self runAction:self.shootSound];
 }
 
 #pragma mark - == 随机掉落、出现障碍物
@@ -176,7 +189,12 @@
 {
 	///< 骰子
 	NSInteger dice = arc4random_uniform(100);
-	if (dice < 15)
+	if (dice < 5)
+	{
+		///< 5% 概率出现能量节点
+		[self dropPowerup];
+	}
+	if (dice < 20)
 	{
 		///< 15% 概率出现乱舰
 		[self dropEnemyShip];
@@ -238,6 +256,23 @@
 {
 	SKNode *ship = [self childNodeWithName:kShipNodeName];
 	
+	[self enumerateChildNodesWithName:kPowerupNodeName usingBlock:^(SKNode *powerup, BOOL *stop) {
+		
+		if ([ship intersectsNode:powerup])
+		{
+			[powerup removeFromParent];
+			self.shipFireRate = 0.1;
+			
+			SKAction *powerdown = [SKAction runBlock:^{
+				self.shipFireRate = 0.5;
+			}];
+			SKAction *wait = [SKAction waitForDuration:5];
+			SKAction *waitAndPowerdown = [SKAction sequence:@[wait, powerdown]];
+			[ship removeActionForKey:@"waitAndPowerdown"];
+			[ship runAction:waitAndPowerdown withKey:@"waitAndPowerdown"];
+		}
+	}];
+	
 	[self enumerateChildNodesWithName:kObstacleNodeName usingBlock:^(SKNode *obstacle, BOOL *stop){
 		
 		[self enumerateChildNodesWithName:kPhotonNodeName usingBlock:^(SKNode *photon, BOOL *stop){
@@ -253,6 +288,9 @@
 			{
 				[photon removeFromParent];
 				[obstacle removeFromParent];
+				
+				[self runAction:self.obstacleExplodeSound];
+				
 				*stop = YES;
 			}
 		}];
@@ -335,6 +373,28 @@
 				  controlPoint2: CGPointMake(-2.5, -644.5)];
 	
 	return bezierPath.CGPath;
+}
+
+- (void)dropPowerup
+{
+	CGFloat sideSize = 30;
+	CGFloat startX = arc4random_uniform(self.size.width-60) + 30;
+	CGFloat startY = self.size.height + sideSize;
+	CGFloat endY = 0 - sideSize;
+	
+	SKSpriteNode *powerup = [self powerupSpriteNode];
+	powerup.size = CGSizeMake(sideSize, sideSize);
+	powerup.position = CGPointMake(startX, startY);
+	[self addChild:powerup];
+	
+	SKAction *move = [SKAction moveTo:CGPointMake(startX, endY) duration:6];
+	SKAction *spin = [SKAction rotateByAngle:-1 duration:1];
+	SKAction *remove = [SKAction removeFromParent];
+	
+	SKAction *spinForever = [SKAction repeatActionForever:spin];
+	SKAction *travelAndRemove = [SKAction sequence:@[move, remove]];
+	SKAction *all = [SKAction group:@[spinForever, travelAndRemove]];
+	[powerup runAction:all];
 }
 
 @end

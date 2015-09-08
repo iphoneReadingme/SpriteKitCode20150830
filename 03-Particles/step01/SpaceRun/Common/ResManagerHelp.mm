@@ -49,6 +49,23 @@
 	return obstacle;
 }
 
++ (SKSpriteNode *)powerupSpriteNode
+{
+	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:[self getImagePathWith:@"powerup.png"]];
+	obstacle.name = kPowerupNodeName;
+	
+	return obstacle;
+}
+
++ (SKSpriteNode *)shootingstarSpriteNode
+{
+	SKSpriteNode * obstacle = [SKSpriteNode spriteNodeWithImageNamed:[self getImagePathWith:@"shootingstar.png"]];
+	obstacle.name = kShootingstarNodeName;
+	
+	return obstacle;
+}
+
+
 #pragma mark - == 声音资源
 + (NSString *)getSoundPathWith:(NSString *)fileName
 {

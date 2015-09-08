@@ -24,6 +24,8 @@
 #define kPhotonNodeName              @"photon"
 #define kObstacleNodeName            @"Obstacle"
 #define kEnemyNodeName               @"enemy"
+#define kPowerupNodeName             @"powerup"
+#define kShootingstarNodeName        @"shootingstar"
 
 
 @interface ResManagerHelp : NSObject
@@ -35,6 +37,9 @@
 + (SKSpriteNode *)obstacleSpriteNode;
 
 + (SKSpriteNode *)enemyShipSpriteNode;
+
++ (SKSpriteNode *)powerupSpriteNode;
++ (SKSpriteNode *)shootingstarSpriteNode;
 
 + (SKAction *)shootSoundAction;
 + (SKAction *)obstacleExplodeSoundAction;
