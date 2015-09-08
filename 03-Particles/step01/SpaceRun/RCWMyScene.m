@@ -100,10 +100,10 @@
 	return [ResManagerHelp powerupSpriteNode];
 }
 
-- (SKSpriteNode *)shootingstarSpriteNode
-{
-	return [ResManagerHelp shootingstarSpriteNode];
-}
+//- (SKSpriteNode *)shootingstarSpriteNode
+//{
+//	return [ResManagerHelp shootingstarSpriteNode];
+//}
 
 ///< touch Event
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

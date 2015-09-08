@@ -6,7 +6,12 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/pssprite for more book information.
 ***/
+
+
+#import "ResManagerHelp.h"
 #import "RCWStarField.h"
+
+
 @implementation RCWStarField
 - (instancetype)init
 {
@@ -23,13 +28,15 @@
     }
     return self;
 }
+
 - (void)launchStar
 {
     CGFloat randX = arc4random_uniform(self.scene.size.width);
     CGFloat maxY = self.scene.size.height;
     CGPoint randomStart = CGPointMake(randX, maxY);
 
-    SKSpriteNode *star = [SKSpriteNode spriteNodeWithImageNamed:@"shootingstar"];
+	SKSpriteNode *star = [ResManagerHelp shootingstarSpriteNode];
+	//star = [SKSpriteNode spriteNodeWithImageNamed:@"shootingstar"];
     star.position = randomStart;
     star.size = CGSizeMake(2, 10);
     star.alpha = 0.1 + (arc4random_uniform(10) / 10.0f);
