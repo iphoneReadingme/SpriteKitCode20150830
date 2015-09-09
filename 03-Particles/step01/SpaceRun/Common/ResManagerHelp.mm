@@ -1,11 +1,13 @@
 
 
+#import "SKEmitterNode+RCWExtensions.h"
 #import "ResManagerHelp.h"
 
 
 
 #define kImageResourceDir            @"Resource/Images"
 #define kSoundsResourceDir           @"Resource/Sounds"
+#define kParticleResourceDir         @"Resource/SKS"
 
 
 
@@ -86,5 +88,36 @@
 {
 	return [SKAction playSoundFileNamed:[self getSoundPathWith:@"shipExplode.m4a"] waitForCompletion:NO];
 }
+
+#pragma mark - == praticle Emitter
++ (NSString *)getParticlePathWith:(NSString *)fileName
+{
+	return [NSString stringWithFormat:@"%@/%@", kParticleResourceDir, fileName];
+}
+
+#if    1
++ (SKEmitterNode *)thrusterEmitter
+{
+	SKEmitterNode *thrust = [SKEmitterNode rcw_nodeWithFile:[self getParticlePathWith:@"thrust.sks"]];
+	thrust.position = CGPointMake(0, -20);
+	
+	return thrust;
+}
+#else
++ (SKEmitterNode *)thrusterEmitter
+{
+	///< 最简单的sks文件加载方式
+	NSString *filename = [self getParticlePathWith:@"thrust.sks"];
+	NSString *basename = [filename stringByDeletingPathExtension];
+	NSString *extension = [filename pathExtension];
+	if ([extension length] == 0) {
+		extension = @"sks";
+	}
+	NSString *path = [[NSBundle mainBundle] pathForResource:basename ofType:@"sks"];
+	SKEmitterNode *thrust = (id)[NSKeyedUnarchiver unarchiveObjectWithFile:path];
+	thrust.position = CGPointMake(0, -20);
+	return thrust;
+}
+#endif
 
 @end

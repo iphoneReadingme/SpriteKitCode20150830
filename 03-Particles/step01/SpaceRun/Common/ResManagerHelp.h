@@ -45,4 +45,6 @@
 + (SKAction *)obstacleExplodeSoundAction;
 + (SKAction *)shipExplodeSoundAction;
 
++ (SKEmitterNode *)thrusterEmitter;
+
 @end

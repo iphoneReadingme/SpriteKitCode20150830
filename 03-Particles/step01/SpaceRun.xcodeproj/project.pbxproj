@@ -10,6 +10,8 @@
 		5B6C2EE91B96FBCA00371EAF /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C2EE81B96FBCA00371EAF /* Resource */; };
 		5B6C2EF11B9E5F8300371EAF /* ResManagerHelp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C2EF01B9E5F8300371EAF /* ResManagerHelp.mm */; };
 		5B6C2EF41B9E68B500371EAF /* RCWStarField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C2EF31B9E68B500371EAF /* RCWStarField.m */; };
+		5B6C2F1E1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C2F1D1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.m */; };
+		5B6C2F201B9FB95F00371EAF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C2F1F1B9FB95F00371EAF /* spark.png */; };
 		AB4962A5182ABA7D005FD042 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A4182ABA7D005FD042 /* Foundation.framework */; };
 		AB4962A7182ABA7D005FD042 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */; };
 		AB4962A9182ABA7D005FD042 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4962A8182ABA7D005FD042 /* UIKit.framework */; };
@@ -44,6 +46,9 @@
 		5B6C2EF01B9E5F8300371EAF /* ResManagerHelp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ResManagerHelp.mm; sourceTree = "<group>"; };
 		5B6C2EF21B9E68B500371EAF /* RCWStarField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWStarField.h; sourceTree = "<group>"; };
 		5B6C2EF31B9E68B500371EAF /* RCWStarField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWStarField.m; sourceTree = "<group>"; };
+		5B6C2F1C1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+RCWExtensions.h"; sourceTree = "<group>"; };
+		5B6C2F1D1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+RCWExtensions.m"; sourceTree = "<group>"; };
+		5B6C2F1F1B9FB95F00371EAF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		AB4962A1182ABA7D005FD042 /* SpaceRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4962A4182ABA7D005FD042 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB4962A6182ABA7D005FD042 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +152,9 @@
 				AB4962BF182ABA7D005FD042 /* RCWMyScene.m */,
 				5B6C2EF21B9E68B500371EAF /* RCWStarField.h */,
 				5B6C2EF31B9E68B500371EAF /* RCWStarField.m */,
+				5B6C2F1C1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.h */,
+				5B6C2F1D1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.m */,
+				5B6C2F1F1B9FB95F00371EAF /* spark.png */,
 				AB4962C3182ABA7D005FD042 /* Images.xcassets */,
 				AB4962AD182ABA7D005FD042 /* Supporting Files */,
 			);
@@ -259,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6C2F201B9FB95F00371EAF /* spark.png in Resources */,
 				5B6C2EE91B96FBCA00371EAF /* Resource in Resources */,
 				AB4962B1182ABA7D005FD042 /* InfoPlist.strings in Resources */,
 				AB4962C4182ABA7D005FD042 /* Images.xcassets in Resources */,
@@ -283,6 +292,7 @@
 			files = (
 				AB4962B3182ABA7D005FD042 /* main.m in Sources */,
 				5B6C2EF11B9E5F8300371EAF /* ResManagerHelp.mm in Sources */,
+				5B6C2F1E1B9FB36600371EAF /* SKEmitterNode+RCWExtensions.m in Sources */,
 				AB4962BD182ABA7D005FD042 /* RCWViewController.m in Sources */,
 				5B6C2EF41B9E68B500371EAF /* RCWStarField.m in Sources */,
 				AB4962B7182ABA7D005FD042 /* RCWAppDelegate.m in Sources */,

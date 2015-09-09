@@ -10,6 +10,7 @@
 
 #import "ResManagerHelp.h"
 #import "RCWStarField.h"
+#import "SKEmitterNode+RCWExtensions.h"
 #import "RCWMyScene.h"
 
 
@@ -44,15 +45,23 @@
         SKSpriteNode *ship = [self spaceshipSpriteNode];
         ship.position = CGPointMake(size.width/2, size.height/2);
         ship.size = CGSizeMake(40, 40);
+		[self addChild:ship];
 		
-        [self addChild:ship];
-		
+		[self addParticle];
 		[self addSounds];
 		
 		_shipFireRate = 0.3f;
 		_shipSpeed = 300;
     }
     return self;
+}
+
+- (void)addParticle
+{
+	SKNode *ship = [self childNodeWithName:kShipNodeName];
+	SKEmitterNode *thrust = [ResManagerHelp thrusterEmitter];
+	[ship addChild:thrust];
+	//...
 }
 
 - (void)addSounds
