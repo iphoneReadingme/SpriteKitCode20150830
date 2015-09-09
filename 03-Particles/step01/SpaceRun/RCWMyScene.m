@@ -9,6 +9,7 @@
 
 
 #import "ResManagerHelp.h"
+#import "RCWStarField.h"
 #import "RCWMyScene.h"
 
 
@@ -36,6 +37,9 @@
 {
     if (self = [super initWithSize:size]) {
         self.backgroundColor = [SKColor blackColor];
+		
+		RCWStarField *starField = [RCWStarField node];
+		[self addChild:starField];
 		
         SKSpriteNode *ship = [self spaceshipSpriteNode];
         ship.position = CGPointMake(size.width/2, size.height/2);
