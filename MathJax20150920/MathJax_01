@@ -1,0 +1,109 @@
+
+
+【Markdown 编辑阅读器】
+【数学公式——练习】
+标签（空格分隔）： 未分类
+
+---
+
+在此输入正文
+### 3. 外链接
+
+使用 \[描述](链接地址) 为文字增加外链接。
+示例：
+这是去往 [本人博客](https://www.zybuluo.com/mdeditor#) 的链接。
+
+### 5. LaTeX 公式
+
+$ 表示行内公式： 
+
+一行内嵌入数学公式：$E=mc^2$
+
+质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。
+
+$$ 表示整行公式：
+$$表示整个一行都是公式$$f(x,y)=x^2+y^2$$
+
+$$\sum_{i=1}^n a_i=0$$
+
+$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+$x^2_2$
+
+$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
+
+
+3. Greekletters
+    小写：α,β,ω
+    $\alpha,\beta,\omega$
+    大写：
+    $\Gamma,\Delta,\Omega$
+4. Spaces
+    $\text{...}$
+开平方：$y=\sqrt{x^3}$
+$\overrightarrow xy$; $y=x^2$
+5.分式公式
+$\frac{n+1}{6}$
+椭圆：$y=\frac{1}{a^2+b^2}$
+6.矩阵 Matrices
+$$
+M_1 = 
+\begin{matrix}
+x_{11}&x_{12}&x_{13}\\
+x_{21}&x_{22}&x_{23}\\
+x_{31}&x_{32}&x_{33}\\
+\end{matrix}
+$$
+
+$$
+M_2 =
+\begin{pmatrix}
+a_{11}&a_{12}&a_{13}\\
+a_{21}&a_{22}&a_{23}\\
+a_{31}&a_{32}&a_{33}\\
+\end{pmatrix}
+$$
+$$ M_3=\left[
+    \begin{array}{cc|c}
+      1&2&3\\
+      4&5&6
+    \end{array}
+\right] $$
+
+方程组：
+$$
+\left\{ 
+\begin{array}{c}
+a_1x+b_1y+c_1z=d_1 \\ 
+a_2x+b_2y+c_2z=d_2 \\ 
+a_3x+b_3y+c_3z=d_3
+\end{array}
+\right.
+$$
+$$
+\left\{ \begin{array}{c} 1+2=3 \\ 4+5=9 \end{array} \right\}
+$$
+$$\SES{A}{B}{C}$$
+
+$\require{AMScd}$
+\begin{CD}
+    A @>a>> B\\
+    @V b V V\# @VV c V\\
+    C @>>d> D
+    \end{CD}
+
+$\lim\limits_{x \to 1} \frac{x^2-1}{x-1}$
+
+6.Long division
+$$
+\require{enclose}
+\begin{array}{rll}
+    125 && \hbox{(Explanations)} \\[-3pt]
+   4 \enclose{longdiv}{500}\kern-.2ex \\[-3pt]
+      \underline{4\phantom{00}} && \hbox{($4 \times 1 = 4$)} \\[-3pt]
+      10\phantom{0} && \hbox{($5 - 4 = 1$)} \\[-3pt]
+      \underline{\phantom{0}8\phantom{0}} && \hbox{($4 \times 2 = 8$)} \\[-3pt]
+      \phantom{0}20 && \hbox{($10 - 8 = 2$)} \\[-3pt]
+      \underline{\phantom{0}20} && \hbox{($4 \times 5 = 20$)} \\[-3pt]
+      \phantom{00}0
+  \end{array}
+$$
