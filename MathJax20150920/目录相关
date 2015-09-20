@@ -1,0 +1,91 @@
+
+
+【Markdown 编辑阅读器】
+【目录布局——练习】
+
+###1.外链接
+[目录布局](https://www.zybuluo.com/mdeditor#178306)
+[百度](http://www.baidu.com)
+
+###2.内链接
+
+###3.无序列表
+- list1
+- list2
+- list3
+###4.有序列表
+1. test1
+2. test2
+3. test3
+
+### 6. 文字引用
+使用 > 表示文字引用。
+示例：
+> 野火烧不尽，春风吹又生。
+
+# 【2】Cmd Markdown 高阶语法手册
+
+### 1. 内容目录
+
+在段落中填写 `[TOC]` 以显示全文内容的目录结构。
+
+[TOC]
+
+### 2. 标签分类
+在编辑区任意行的列首位置输入以下代码给文稿标签：
+标签： 数学 英语 Markdown
+或者
+Tags： 数学 英语 Markdown
+
+### 3. 删除线
+使用 ~~ 表示删除线。
+~~这是一段错误的文本。~~
+
+### 4. 注脚
+使用 [^keyword] 表示注脚。
+这是一个注脚[^footnote]的样例。
+这是第二个注脚[^footnote2]的样例。
+
+### 5. LaTeX 公式
+质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。
+$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+访问 [MathJax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference) 参考更多使用方法。
+
+### 6. 加强的代码块
+
+支持四十一种编程语言的语法高亮的显示，行号显示。
+
+非代码示例：
+```
+if(a==YES)
+{
+    a = NO;
+}
+```
+```
+$ sudo apt-get install vim-gnome
+```
+
+####Python 示例：
+
+```python
+@requires_authorization
+def somefunc(param1='', param2=0):
+    '''A docstring'''
+    if param1 > param2: # interesting
+        print 'Greater'
+    return (param2 - param1 + 1) or None
+
+class SomeClass:
+    pass
+
+>>> message = '''interpreter
+... prompt'''
+```
+
+
+
+---
+[^footnote]: 这是一个 *注脚* 的 **文本**。
+
+[^footnote2]: 这是另一个 *注脚* 的 **文本**。
